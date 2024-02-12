@@ -1,0 +1,86 @@
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        script(src="https://kit.fontawesome.com/f510059673.js" crossorigin="anonymous")
+        link(rel="stylesheet" href="/css/homeStyle.css")
+        title Movies 
+        body 
+        include header.pug 
+        div(class="pagination")
+            div(class="prev") PREV
+            div(class="page") PAGE
+                span(class="page-num")
+            div(class="next") NEXT 
+        div(class="allMovies")
+            each film in movies
+                a(href=`/movies/${film.id}`)
+                    div(class="card")
+                        div(class="imgBox")
+                            img(src=film.Poster)
+                        div(class="details")
+                            div(class="textContent")
+                                div(class="movie")
+                                    div(class="container")
+                                        a(href="" class="btn effect01")
+                                            button VIEW MOVIE 
+                                                i(class="fab fa-youtube")
+                                h3 #{film.Title}
+                        div(class="description")    
+                            div(class="icon")
+                                i(class="fas fa-info-circle")
+                            div(class="contents")
+                                h3 DESCRIPTION 
+                                p #{film.Plot}
+
+        script. 
+            const allMovies = document.querySelector(".allMovies").children;
+            const prev=document.querySelector(".prev");
+            const next=document.querySelector(".next");
+            const page=document.querySelector(".page-num");
+            const maxItem = 12;
+            let index = 1;
+            console.log(allMovies.length);
+            const pagination=Math.ceil(allMovies.length/maxItem);
+            prev.addEventListener("click",function(){
+                index--;
+                check();
+                showItems();
+            })
+            next.addEventListener("click",function(){
+                index++;
+                check();
+                showItems();  
+            })
+            function check(){
+                if(index==pagination){
+                    next.classList.add("disabled");
+                }
+                else{
+                next.classList.remove("disabled");	
+                }
+
+                if(index==1){
+                    prev.classList.add("disabled");
+                }
+                else{
+                prev.classList.remove("disabled");	
+                }
+            }
+            function showItems() {
+                for(let i=0;i<allMovies.length; i++){
+                    allMovies[i].classList.remove("show");
+                    allMovies[i].classList.add("hide");
+
+
+                    if(i>=(index*maxItem)-maxItem && i<index*maxItem){
+                    allMovies[i].classList.remove("hide");
+                    allMovies[i].classList.add("show");
+                    }
+                    page.innerHTML=index;
+                }       
+            }
+            window.onload = function(){
+                showItems();
+                check();
+            }

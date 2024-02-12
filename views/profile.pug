@@ -1,0 +1,78 @@
+head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    script(src="https://kit.fontawesome.com/f510059673.js" crossorigin="anonymous")
+    link(rel="stylesheet" href="/css/profileStyle.css")
+    title Movies 
+    body 
+    include header.pug
+
+    div(class="container")
+        div(class="card")
+            div(class="card-image")
+                img(src="/resources/movies2.jpg", alt="")
+            div(class="profile-image")
+                img(src="/resources/user.png" alt="")
+            div(class="card-content")
+                if user.admin
+                    h2 ADMIN
+                h2 #{user.username}
+            div(class="middle")
+                div(class="menu")
+                    li(class="item" id="following")
+                        a(href="#following" class="btn")
+                            i(class="fas fa-user-alt")
+                            |USERS FOLLOWED 
+                        div(class="smenu")
+                            each followed in user.followedUsers
+                                a(href="/user/" + followed.pid) #{followed.username}             
+                    li(class="item" id="peopleFollowing")
+                        a(href="#peopleFollowing" class="btn")
+                            i(class="fas fa-user-friends")
+                            |PEOPLE FOLLOWED 
+                        div(class="smenu")
+                            each person in user.followedPeople
+                                a(href="/people/" + person.pid) #{person.name}                        
+                    li(class="item" id="movies")
+                        a(href="#movies" class="btn")
+                            i(class="fas fa-film")
+                            |MOVIES 
+                        div(class="smenu")
+                            each movie in user.movieList
+                                a(href=`/movies/${movie.id}`) 
+                                    img(src=movie.Poster)
+                                a(id="movieTitle" href=`/movies/${movie.id}`) #{movie.Title}
+                    li(class="item" id="recommended")
+                        a(href="#recommended" class="btn")
+                            i(class="fas fa-thumbs-up")
+                            |RECOMMENDED 
+                        div(class="smenu")
+                            each recMovie in user.recMovieList 
+                                a(href=`/movies/${recMovie.id}`)
+                                    img(src=recMovie.Poster)
+                                a(id="movieTitle" href=`/movies/${recMovie.id}`) #{recMovie.Title}
+                    li(class="item" id="reviews")
+                        a(href="#reviews" class="btn")
+                            i(class="fas fa-comment-alt")
+                            |REVIEWS 
+                        div(class="smenu")
+                            each review in user.reviews 
+                                a(href=`/reviews/${review.id}`) #{review.id}
+                    li(class="item" id="notifications")
+                        a(href="#notifications" class="btn")
+                            i(class="fas fa-bell")
+                            |NOTIFICATIONS 
+                        div(class="smenu")
+                            each notification in user.notifications
+                                - if (notification.type == "user")
+                                    p User #{notification.username} has posted a new Review!
+                                - else if (notification.type == "actor")
+                                    p #{notification.name} has acted in a new Movie!
+                                - else if (notification.type == "director")
+                                    p #{notification.name} has directed a new Movie! 
+                                - else if (notification.type == "writer")
+                                    p #{notification.name} has a written in a new Movie!
+                    li(class="item" id="Close")
+                        a(href="#close" class="btn")
+                            i(class="fas fa-window-close")
+                        div(class="smenu")

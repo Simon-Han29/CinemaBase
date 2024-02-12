@@ -1,0 +1,36 @@
+html    
+    head 
+        title profile
+    link(rel="stylesheet" type="text/css" href="/css/profile.css")
+
+    body 
+        include header.pug 
+        h1 #{user.username}'s profile 
+        h3 Movies
+        div(id="movieListDiv")
+        each movie in user.movieList
+            div(id="movie")
+                a(href=`/movies/${movie.id}`) 
+                    img(src=movie.Poster)
+                a(id="movieTitle" href=`/movies/${movie.id}`) #{movie.Title}
+        h3 Followed People
+        each person in user.followedPeople
+            a(href="/people/" + person.pid) #{person.name}
+
+        h3 Followed Users
+        each followed in user.followedUsers
+            a(href="/user/" + followed.pid) #{followed.username}
+        h3 Reviews
+        each review in user.reviews
+            a(href=`/reviews/${review.id}`) #{review.id}
+
+        h3 Notifications 
+        each notification in user.notifications
+            - if (notification.type == "user")
+                p User #{notification.username} has posted a new Review!
+            - else if (notification.type == "actor")
+                p #{notification.name} has acted in a new Movie!
+            - else if (notification.type == "director")
+                p #{notification.name} has directed a new Movie! 
+            - else if (notification.type == "writer")
+                p #{notification.name} has a written in a new Movie!

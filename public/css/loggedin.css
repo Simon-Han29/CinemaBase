@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* NAVBAR */
+.logo img {
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 10px;
+  width: 7%;
+  height: auto;
+}
+header {
+  background-color: #e6be8a;
+}
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+  padding-top: 20px;
+}
+nav {
+  float: right;
+  padding-right: 20px;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin-left: 50px;
+  padding-top: 20px;
+  position: relative;
+}
+nav li a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+nav li a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  opacity: 0;
+  transition: all ease-in-out 250ms;
+}
+nav li a:hover::before {
+  opacity: 1;
+  width: 100%;
+}
+
+/* Body*/
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* NAVBAR */
+.logo img {
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 10px;
+  width: 7%;
+  height: auto;
+}
+header {
+  background-color: #e6be8a;
+}
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+  padding-top: 20px;
+}
+nav {
+  float: right;
+  padding-right: 20px;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin-left: 50px;
+  padding-top: 20px;
+  position: relative;
+}
+nav li a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+nav li a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  opacity: 0;
+  transition: all ease-in-out 250ms;
+}
+nav li a:hover::before {
+  opacity: 1;
+  width: 100%;
+}
+
+#content-wrapper {
+  text-align: center;
+  margin-top: 20%;
+}
+
+#logoutbtn {
+  margin-top: 10px;
+}
+
+.button {
+  height: 50px;
+  width: 150px;
+  background-color: #c9a77c;
+  color: white;
+  user-select: none;
+  border-style: hidden;
+  outline: none;
+  transition: 0.3s;
+  border-radius: 5cm;
+  align-self: center;
+}
+
+.button:hover {
+  background-color: #6f6565;
+}

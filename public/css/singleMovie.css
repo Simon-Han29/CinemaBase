@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* NAVBAR */
+.logo img {
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 10px;
+  width: 7%;
+  height: auto;
+}
+header {
+  background-color: #e6be8a;
+  /* background-color: #120a8f; */
+}
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+  padding-top: 20px;
+}
+nav {
+  float: right;
+  padding-right: 20px;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin-left: 50px;
+  padding-top: 20px;
+  position: relative;
+}
+nav li a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+nav li a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  opacity: 0;
+  transition: all ease-in-out 250ms;
+}
+nav li a:hover::before {
+  opacity: 1;
+  width: 100%;
+}
+
+/* PAGE STYLE*/
+.content-wrapper {
+  /* border: 1px solid white; */
+  display: flex;
+  margin: 8% 20% 0px 20%;
+  color: #2e3555;
+}
+
+hr {
+  background-color: #2e3555;
+  height: 1px;
+  border: none;
+}
+/* Left column */
+.left-column-wrapper {
+  /* border: 1px solid orange; */
+  margin-right: 20px;
+  display: flex;
+  flex-flow: column;
+}
+
+.movie-image-wrapper {
+  height: 450px;
+  width: 300px;
+  /* border: 1px solid green; */
+  background-color: #e6be8a;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+#btn {
+  width: 300px;
+  height: 75px;
+  margin-top: 10px;
+  background-color: #2e3555;
+  border-style: hidden;
+  user-select: none;
+  outline: none;
+  color: white;
+  transition: 0.3s;
+}
+
+#btn:hover {
+  background-color: #5e6bae;
+}
+
+.movie-info-wrapper {
+  margin-top: 10px;
+  background-color: #e6be8a;
+  padding-bottom: 0px;
+  flex-grow: 1;
+}
+
+.info-header-wrapper {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#info-line {
+  width: 85%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 15px;
+  font-size: 12px;
+}
+
+li {
+  margin: 10px 0px 0px 0px;
+}
+
+/* Main column */
+.main-column-wrapper {
+  /* border: 1px solid purple; */
+  width: 100%;
+  background-color: #e6be8a;
+}
+
+.main-column-header {
+  display: flex;
+  /* width: 90%; */
+  /* border: 1px solid red; */
+  margin: 0px 15px 0px 15px;
+  justify-content: space-between;
+}
+
+.title-wrapper {
+  /* border: 1px solid white; */
+  margin-bottom: 30px;
+}
+.synopsis-wrapper {
+  margin: 0px 15px 0px 15px;
+  font-size: 12px;
+  /* border: 1px solid white; */
+}
+#synopsis-title {
+  padding: 0px;
+  /* border: 1px solid white; */
+  margin-bottom: 5px;
+}
+#synopsis-line {
+  /* margin: 0px; */
+  margin-top: 0px;
+}
+
+.actors-wrapper {
+  margin: 40px 15px 0px 15px;
+  font-size: 12px;
+}
+
+.actor-title-wrapper {
+  padding: 0px;
+  margin-bottom: 0px;
+  /* border: 1px solid white; */
+  padding: 0px;
+}
+
+#reviewDiv {
+  margin: 8% 20% 8% 20%;
+}
+
+#summary {
+  height: 100px;
+  width: 500px;
+  outline: none;
+}
+
+#reviewText {
+  height: 200px;
+  width: 500px;
+  outline: none;
+}
+
+#reviewHead,
+#reviewsTitle {
+  text-align: center;
+}
+
+#addReview {
+  display: flex;
+  flex-direction: column;
+}
+
+#ratingLabel,
+#rating,
+#summaryLabel,
+#summary,
+#reviewTextLabel,
+#reviewText,
+#reviewBtn {
+  align-self: center;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#rating {
+  height: 50px;
+  width: 50px;
+}
+#reviewBtn {
+  height: 50px;
+  width: 125px;
+}
+
+.singleReview-wrapper {
+  border: 1px solid white;
+  margin-top: 20px;
+  width: 75%;
+  text-decoration: none;
+}
+
+.commentHeading-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+  display: flex;
+  text-decoration: none;
+}
+
+.commentBox-wrapper {
+  padding: 20px;
+  border: 1px solid white;
+  word-wrap: break-word;
+  text-decoration: none;
+}
+
+#commentLink {
+  text-decoration: none;
+  color: white;
+}
+
+#reviewBtn {
+  height: 50px;
+  width: 125px;
+  background-color: #2e3555;
+  outline: none;
+  border: none;
+  color: white;
+  border-radius: 5cm;
+  transition: 0.3s;
+}
+
+#reviewBtn:hover {
+  background-color: #5e6bae;
+}

@@ -1,0 +1,63 @@
+html
+    head
+        link(rel="stylesheet" type="text/css" href="/css/loginStyle.css")
+        title Login
+    body
+        header
+            nav 
+                ul  
+                    li
+                        a(href="/") HOME 
+                    li 
+                        a(href="/profile") PROFILE 
+                    li 
+                        a(href="/account") SIGN IN/SIGN UP 
+                    li 
+                        a(href="/search") SEARCH 
+                    li 
+                        a(href="/contribute") CONTRIBUTE
+        section
+            div(class="container")
+                div(class="user signinBx")
+                    div(class="imgBx")
+                        img(src="/resources/movies1.jpg")
+                    div(class="formBx")
+                        form(action="/login", method="post")
+                            h2 SIGN IN
+                            div(class="fields")
+                                div(class="username")
+                                    i(class="far fa-user")
+                                    input(type="username" class="user-input" placeholder="username" name="username" required) 
+                                div(class="password")
+                                    i(class="fas fa-lock")
+                                    input(type="password" class="pass-input" placeholder="password" name="password" required)
+                            div(class="container1")
+                                div(class="btn effect01")
+                                    button(type="submit") SIGN IN
+                            p(class="signup") DON'T HAVE AN ACCOUNT?
+                                a(href="#" onclick="toggleForm();") SIGN UP
+                div(class="user signupBx")
+                    div(class="formBx")
+                        form(action="/signup", method="post")
+                            h2 CREATE ACCOUNT
+                            div(class="fields")
+                                div(class="username")
+                                    i(class="far fa-user")
+                                    input(type="username" class="user-input" placeholder="username" name="username" required) 
+                                div(class="password")
+                                    i(class="fas fa-lock")
+                                    input(type="password" class="pass-input" placeholder="password" name="password" required)
+                            div(class="container1")
+                                div(class="btn effect01")
+                                    button(type="submit") SIGN UP
+                            p(class="signup") ALREADY HAVE AN ACCOUNT?
+                                a(href="#" onclick="toggleForm();") SIGN UP
+                    div(class="imgBx")
+                        img(src="/resources/movies2.jpg")
+        script(src="/js/login.js")
+
+                    
+
+
+
+

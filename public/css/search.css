@@ -1,0 +1,467 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* NAVBAR */
+.logo img {
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 10px;
+  width: 7%;
+  height: auto;
+}
+header {
+  background-color: #e6be8a;
+  /* background-color: #120a8f; */
+}
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+  padding-top: 20px;
+}
+nav {
+  float: right;
+  padding-right: 20px;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin-left: 50px;
+  padding-top: 20px;
+  position: relative;
+}
+nav li a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+nav li a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  opacity: 0;
+  transition: all ease-in-out 250ms;
+}
+nav li a:hover::before {
+  opacity: 1;
+  width: 100%;
+}
+
+/* Body*/
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1b1b;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* NAVBAR */
+.logo img {
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 10px;
+  width: 7%;
+  height: auto;
+}
+header {
+  background-color: #e6be8a;
+  /* background-color: #120a8f; */
+}
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+  padding-top: 20px;
+}
+nav {
+  float: right;
+  padding-right: 20px;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin-left: 50px;
+  padding-top: 20px;
+  position: relative;
+}
+nav li a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+nav li a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  opacity: 0;
+  transition: all ease-in-out 250ms;
+}
+nav li a:hover::before {
+  opacity: 1;
+  width: 100%;
+}
+
+#searchSpec {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.criteria {
+  margin-bottom: 10px;
+  /* margin-left: 10%; */
+  margin-right: 250px;
+  align-self: center;
+}
+
+.criteria > input {
+  height: 50px;
+  background-color: #c9a77c;
+  border-radius: 5cm;
+  width: 400px;
+  user-select: none;
+  outline: none;
+  padding: 20px;
+  border: none;
+  display: inline-block;
+}
+
+.criteria > label {
+  display: inline-block;
+  clear: left;
+  width: 250px;
+  text-align: right;
+}
+
+#submit {
+  height: 50px;
+  width: 125px;
+  background-color: #c9a77c;
+  color: white;
+  user-select: none;
+  border-style: hidden;
+  outline: none;
+  transition: 0.3s;
+  border-radius: 5cm;
+  align-self: center;
+}
+
+#submit:hover {
+  background-color: #6f6565;
+}
+
+/* ============================================================*/
+.movieInput {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+}
+.movieInput button {
+  border: 2px solid #e6be8a;
+  outline: none;
+  padding: 10px;
+  transition: 0.3s;
+}
+.movieInput button:hover {
+  border: 2px solid #e6be8a;
+  background-color: #e6be8a;
+  color: #1b1b1b;
+}
+input {
+  padding: 13px 5px;
+  width: 290px;
+  border: none;
+  outline: none;
+}
+.card {
+  width: 300px;
+  height: 500px;
+  background: white;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0;
+  transform: scale(0.95);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+.card:hover {
+  transform: scale(1);
+  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+}
+.imgBox {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 375px;
+}
+.details {
+  position: absolute;
+  width: 100%;
+  height: 45%;
+  background: #f4f4f4;
+  padding: 0px 20px;
+  bottom: -20%;
+  transition: 0.5s;
+}
+.textContent {
+  position: relative;
+  margin-top: 10px;
+  color: #555;
+}
+h3 {
+  font-size: 15px;
+  padding-top: 0px;
+  text-align: center;
+}
+.price {
+  position: absolute;
+  top: 50px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.movie {
+  position: absolute;
+  left: 4%; /*centers button in middle*/
+  top: 50px;
+}
+
+h4 {
+  font-size: 18px;
+  margin-top: 15px;
+  padding: 10px 0;
+  font-weight: bold;
+  color: #555;
+}
+.description {
+  background: #e6be8a;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  top: -85px;
+  right: -85px;
+  border-radius: 0 0 200px 200px;
+  transition: all 0.3s, border-radius 1s, top 1s;
+}
+.description .icon {
+  position: absolute;
+  top: 93px;
+  right: 93px;
+  color: #fff;
+  opacity: 1;
+}
+.description:hover {
+  width: 100%;
+  height: 75%;
+  right: 0;
+  top: 0;
+  border-radius: 0;
+}
+.description:hover .icon {
+  opacity: 0;
+}
+.description .contents {
+  color: black;
+  padding-left: 5px;
+  transform: scale(0.5);
+  transform: translateY(-200%);
+  transition: opacity 0.2s, transform 0.8s;
+  opacity: 0;
+}
+.description:hover .contents {
+  transform: scale(1);
+  opacity: 1;
+  transform: translateY(0);
+}
+.description h3 {
+  margin: 10px 0;
+  text-align: center;
+}
+.contents p {
+  font-size: 12px;
+}
+.contents .reviews p {
+  font-size: 10px;
+  font-style: italic;
+}
+.allMovies {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin-top: 200px;
+}
+
+/*new                 fix css when button is clicked theres a black outline                     button*/
+button {
+  border: none;
+  background: none;
+  color: #e6be8a;
+  padding: 20px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: -10px;
+  width: 240px;
+}
+
+.btn {
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 180px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+/*btn_background*/
+.effect01 {
+  color: #fff;
+  border: 2px #e6be8a solid;
+  box-shadow: 0px 0px 0px 2px #e6be8a solid;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.effect01:hover {
+  background-color: #e6be8a;
+}
+
+/*btn_text*/
+.effect01 button {
+  transition: all 0.2s ease-out;
+  z-index: 2;
+}
+.effect01:hover button {
+  letter-spacing: 0.13em;
+  color: white;
+}
+
+/*highlight*/
+.effect01:after {
+  background: #fff;
+  border: 0px solid #e6be8a;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.8;
+  position: absolute;
+  top: -50px;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+  width: 50px;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
+  z-index: 1;
+}
+.effect01:hover:after {
+  border: 20px solid #e6be8a;
+  opacity: 0;
+  left: 120%;
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+
+.allMovies .card.hide {
+  display: none;
+}
+.allMovies .card .item.show {
+  display: block;
+  animation: show 0.5s ease;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pagination {
+  width: 100%;
+  float: left;
+  padding-top: 100px;
+  text-align: center;
+}
+.pagination div {
+  display: inline-block;
+  margin: 0 10px;
+}
+.pagination .page {
+  color: gray;
+}
+.pagination .prev,
+.pagination .next {
+  color: #e6be8a;
+  border: 1px solid #e6be8a;
+  font-size: 15px;
+  padding: 7px 15px;
+  cursor: pointer;
+}
+
+.pagination .prev.disabled,
+.pagination .next.disabled {
+  border-color: gray;
+  color: gray;
+  pointer-events: none;
+}

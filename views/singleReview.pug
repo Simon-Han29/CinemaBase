@@ -1,0 +1,34 @@
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        script(src="https://kit.fontawesome.com/f510059673.js" crossorigin="anonymous")
+        link(rel="stylesheet" href="/css/singleReviewStyle.css")
+        title Single Review  
+
+    body
+        include header.pug
+        div(class="container")
+            div(class="card")
+                div(class="card-image")
+                    img(src="/resources/movies1.jpg", alt="")
+                div(class="profile-image")
+                    img(src="/resources/movieReview.jpeg" alt="")
+                div(class="card-content")
+                
+                    a(href=`/movies/${review.movieId}`) #{review.movieTitle}
+                div(class="middle")
+                    div(class="menu")
+                        li(class="item")
+                            a(href="#" class="btn")
+                                i(class="fas fa-user-alt")
+                                |REVIEW 
+                            div(class="smenu")
+                                h3 user: #{review.username}
+                                p rating: #{review.rating}
+                                p summary: #{review.summary}
+                                p Review: #{review.text}
+                  
+
+
+                    

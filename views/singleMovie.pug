@@ -1,0 +1,102 @@
+html 
+    head 
+        title Single Movie
+    script(src="/js/singleMovie.js")
+    link(rel="stylesheet" type="text/css" href="/css/singleMovie.css") 
+    body 
+        include header.pug
+
+        //Left column
+        div(class="content-wrapper")
+            div(class="left-column-wrapper")
+                div(class="movie-image-wrapper")
+                    img(id="poster" src=movie.Poster alt="Image has yet to be added" width="350" height="500")
+                if inList
+                    button(id="btn" class="" onclick=`toggleAdd(${JSON.stringify(movie.Title)}, ${JSON.stringify(movie.id)}, ${JSON.stringify(uid)})`) Remove from List
+                else 
+                    button(id="btn" class="btnAdd" onclick=`toggleAdd(${JSON.stringify(movie.Title)}, ${JSON.stringify(movie.id)}, ${JSON.stringify(uid)})`) Add To List
+                div(class="movie-info-wrapper")
+                    div(class="info-header-wrapper")
+                        b Movie Information
+                    hr#info-line
+                    div(class="info-wrapper")
+                        ul 
+                            li Release Year: #{movie.Released}
+                            li Runtime: #{movie.Runtime}
+                            li Rated: #{movie.Rated}
+                            li Genre: 
+                            each genre in movie.Genre
+                                a(href=`/movies/genre/?genre=${genre}`) #{genre}
+                                br
+                            li Awards: #{movie.Awards}
+
+            div(class="main-column-wrapper")
+                div(class="main-column-header")
+                    div(class="title-wrapper")
+                        h3(id="title") #{movie.Title}
+                div(class="synopsis-wrapper")
+                    p#synopsis-title Synopsis 
+                    hr#synopsis-line
+                    div(class="synopsis-text-wrapper")
+                        p #{movie.Plot}
+                div(class="actors-wrapper")
+                    
+                    div(class="actor-title-wrapper") 
+                        p Actors
+                    hr#actor-wrapper
+                    div(class="actor-portrait-wrapper")
+                        each actor in movie.Actors
+                            a(href="/people/" + actor.id) #{actor.name}
+                            br
+                    div(class="director-title-wrapper") 
+                        p Director(s)
+                    hr#actor-wrapper
+                    div(class="actor-portrait-wrapper")
+                        each director in movie.Director
+                            a(href="/people/" + director.id) #{director.name}
+                            br
+                    div(class="writer-title-wrapper") 
+                        p Writer(s)
+                    hr#actor-wrapper
+                    div(class="writer-portrait-wrapper")
+                        each writer in movie.Writer
+                            a(href="/people/" + writer.id) #{writer.name}
+                            br
+                    div(class="similar-title-wrapper") 
+                        p Similar Movies
+                    hr#actor-wrapper
+                    div(class="similar-portrait-wrapper")
+                        each movie in uniqueSimilarMovies
+                            a(href="/movies/" + movie.id) #{movie.Title}
+                            br
+
+        div(id="reviewDiv")
+            h3(id="reviewsTitle") Reviews
+            div(id="reviews")
+            br
+            br
+            each review in movie.reviews
+                div(class="singleReview-wrapper")
+                    a(id="commentLink" href=`/reviews/${review.id}`)
+                        div(class="commentHeading-wrapper")
+                            p #{review.username}
+                            p Rating: #{review.rating} 
+                        div(class="commentBox-wrapper")
+                            p #{review.summary}
+
+            div(id="addReview")
+                
+                h3(id="reviewHead") Add a Review
+                label(id="ratingLabel" for="rating") Rating:
+                input(type="number" id="rating" min="1" max="10" maxlength="1")
+                br
+                label(id="summaryLabel" for="summary") Summary: 
+                br
+                textArea(id="summary" placeholder="Type a short summary to be displayed..." maxlength="120")
+                br
+                label(id="reviewTextLabel" for="reviewText") Review:
+                br
+                textArea(id="reviewText" placeholder="Type your review here...") 
+                br
+                button(id= "reviewBtn" onclick=`submitReview(${JSON.stringify(movie.id)}, ${JSON.stringify(uid)}, ${JSON.stringify(username)})`) Submit
+        

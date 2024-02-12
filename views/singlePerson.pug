@@ -1,0 +1,56 @@
+html    
+    head 
+        title singlePerson
+    script(src="/js/singlePerson.js")
+    script(src="https://kit.fontawesome.com/f510059673.js" crossorigin="anonymous")
+    link(rel="stylesheet" type="text/css" href="/css/singlePerson.css")
+
+    body
+        include header.pug
+        div(class="container")
+            div(class="card")
+                div(class="card-image")
+                    img(src="/resources/movies2.jpg", alt="")
+                div(class="profile-image")
+                    img(src="/resources/user.png" alt="")
+                div(class="card-content")
+                    h2 #{person.name}
+                    div(class="btnCenter")
+                        if following
+                            button(id="btnState" class="btnFollow" onclick=`toggleFollow(${JSON.stringify(uid)}, ${JSON.stringify(person.id)})`) Following
+                        else 
+                            button(id="btnState" class="" onclick=`toggleFollow(${JSON.stringify(uid)}, ${JSON.stringify(person.id)})`) Follow
+                div(class="middle")
+                    div(class="menu")
+                        li(class="item" id="starred")
+                            a(href="#starred" class="btn")
+                                i(class="fas fa-user-friends")
+                                |MOVIES STARRED IN 
+                            div(class="smenu")
+                                each movie in person.Acted 
+                                    a(href="/movies/" + movie.id) 
+                                        img(src=movie.Poster)
+                                    a(id="movieTitle" href=`/movies/${movie.id}`) #{movie.Title}                
+                        li(class="item" id="directed")
+                            a(href="#directed" class="btn")
+                                i(class="fas fa-video")
+                                |MOVIES DIRECTED 
+                            div(class="smenu")
+                                each movie in person.Directed 
+                                    a(href="/movies/" + movie.id) 
+                                        img(src=movie.Poster)
+                                    a(id="movieTitle" href=`/movies/${movie.id}`) #{movie.Title}
+                        li(class="item" id="written")
+                            a(href="#written" class="btn")
+                                i(class="fas fa-pen")
+                                |MOVIES WRITTEN 
+                            div(class="smenu")
+                                each movie in person.Wrote
+                                    a(href="/movies/" + movie.id) 
+                                        img(src=movie.Poster)
+                                    a(id="movieTitle" href=`/movies/${movie.id}`) #{movie.Title}
+                        li(class="item" id="Close")
+                            a(href="#close" class="btn")
+                                i(class="fas fa-window-close")
+                            div(class="smenu")
+

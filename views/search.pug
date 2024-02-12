@@ -1,0 +1,83 @@
+html    
+    head 
+        title Search
+    script(src="/js/search.js")
+    link(rel="stylesheet" type="text/css" href="/css/search.css")
+    body
+        include header.pug
+        
+    
+        div(id="searchSpec")
+            
+            div(class="criteria")
+                label(id="titleLabel" for="titleField") Title: 
+                input(type="text" placeholder="Movie Title..." id="titleField")
+            div(class="criteria")
+                label(id="actorLabel" for="actorField") Actor name (Separate with ,): 
+                input(type="text" placeholder="Actor name(s)" id="actors")
+            div(class="criteria")
+                label(id="genreLabel" for="genreField") Genre (Separate with ,): 
+                input(type="text" placeholder="Genre(s)" id="genres")
+            br
+            button(id="submit" onclick="search()") Search
+        div(class="pagination")
+            div(class="prev") PREV
+            div(class="page") PAGE
+                span(class="page-num")
+            div(class="next") NEXT 
+        div(class="allMovies" id="allMovies")
+
+
+    script.
+        document.getElementById("submit").addEventListener("click", myFunction);
+        function myFunction() {
+
+            const allMovies = document.querySelector(".allMovies").children;
+            const prev=document.querySelector(".prev");
+            const next=document.querySelector(".next");
+            const page=document.querySelector(".page-num");
+            const maxItem = 12;
+            let index = 1;
+            console.log(allMovies.length);
+            const pagination=Math.ceil(allMovies.length/maxItem);
+            prev.addEventListener("click",function(){
+                index--;
+                check();
+                showItems();
+            })
+            next.addEventListener("click",function(){
+                index++;
+                check();
+                showItems();  
+            })
+            function check(){
+                if(index==pagination){
+                    next.classList.add("disabled");
+                }
+                else{
+                next.classList.remove("disabled");	
+                }
+
+                if(index==1){
+                    prev.classList.add("disabled");
+                }
+                else{
+                prev.classList.remove("disabled");	
+                }
+            }
+            function showItems() {
+                for(let i=0;i<allMovies.length; i++){
+                    allMovies[i].classList.remove("show");
+                    allMovies[i].classList.add("hide");
+
+
+                    if(i>=(index*maxItem)-maxItem && i<index*maxItem){
+                    allMovies[i].classList.remove("hide");
+                    allMovies[i].classList.add("show");
+                    }
+                    page.innerHTML=index;
+                }       
+            }
+            showItems();
+            check();
+        }

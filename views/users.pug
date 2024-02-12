@@ -1,0 +1,20 @@
+html    
+    head 
+        title users 
+    script(src="/js/users.js")
+    link(rel="stylesheet" type="text/css" href="/css/users.css")
+    body 
+        include header.pug
+        h1(id="title") ALL USERS
+        div(id="content-wrapper")
+            each user in users
+                - if (user.id == uid)
+                    a(class="un-tag") #{user.username} (You)
+                    br
+                - else 
+                    a(class="un-tag" href="/user/" + user.id)  #{user.username}
+                    - if (followedUsers.hasOwnProperty(user.id))
+                        button(id="btn" class="" onclick=`toggleFollow(${JSON.stringify(user.id)}, ${JSON.stringify(user.username)}, ${JSON.stringify(uid)})`) Following
+                    - else
+                        button(id="btn" class="btnFollow" onclick = `toggleFollow(${JSON.stringify(user.id)}, ${JSON.stringify(user.username)}, ${JSON.stringify(uid)})`) Follow
+                    br

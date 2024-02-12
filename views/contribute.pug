@@ -1,0 +1,53 @@
+html    
+    head 
+        title contribute
+    script(src="/js/contribute.js")
+    link(rel="stylesheet" type="text/css" href="/css/contribute.css")
+    body
+
+        include header.pug
+
+        h1 Add actor
+
+        div(class="criteria")
+            label(for="actor") Actor Name: 
+            input(id="name" placeholder="Actor name")
+            button(class="addBtn" id="addActorBtn" onclick="addActor()") Add Actor
+
+        h1 Add movie
+        div(class="criteria")
+            label(for="title") Movie Title: 
+            input(id="title" placeholder="Movie Title")
+            br
+            label(for="release") Release Year: 
+            input(id="release" placeholder="Release year")
+            br
+            label(for="runtime") Runtime(minutes): 
+            input(id="runtime" placeholder="Runtime")
+            br
+            label(for="plot") Plot: 
+            input(id="plot" placeholder="plot")
+            br
+            label(for="genre") Genre: 
+            input(id="genre" placeholder="Genre")
+            br
+            label(for="actors") Actor Name: 
+            input(id="actors" placeholder="Actor name" onkeyup="searchActor()")
+            button(class="listBtn" id="addToActorsListBtn" onclick="addToActorList()") Add To Movie's Actors
+            br
+            div(id="actorList")
+            div(id="actorResults")
+            br
+            label(for="director") Director Name: 
+            input(id="director" placeholder="Director name" onkeyup="searchDirector()")
+            button(class="listBtn" id="addToDirectorsListBtn" onclick="addToDirectorList()") Add To Movie's Directors
+            div(id="directorList")
+            div(id="directorResults")
+            br
+            label(for="writer") Writer Name: 
+            input(id="writer" placeholder="Writer name" onkeyup="searchWriter()")
+            button(class="listBtn" id="addToWritersListBtn" onclick="addToWriterList()") Add To Movie's Writers
+            div(id="writerList")
+            div(id="writerResults")
+            br
+        button(class="addBtn" id="addMovieBtn" onclick="addMovie()") Add Movie 

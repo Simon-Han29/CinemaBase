@@ -1,0 +1,11 @@
+html    
+    head 
+        title logged out
+    link(rel="stylesheet" type="text/css" href="/css/loggedin.css")
+
+    body 
+        include header.pug
+        div(id="content-wrapper")
+            h1 You've been logged out.
+            form(action="/" method="get")
+                button(type="submit" class="button") Return to Login

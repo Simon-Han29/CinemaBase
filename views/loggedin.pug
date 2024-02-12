@@ -1,0 +1,17 @@
+html 
+    head 
+        title Account
+    script(src="/js/account.js")
+    link(rel="stylesheet" type="text/css" href="/css/loggedin.css")
+    body 
+        include header.pug
+        div#main 
+            div(id="content-wrapper")
+                h1 YOUR ARE ALREADY LOGGED IN
+                - if (isContributor)
+                    button(class="button" id="btn" onclick="reqRegular()") Change to Regular 
+                - else 
+                    button(class="button" id="btn" onclick="reqContributor()") Change to Contributor
+
+                form(action = "/logout" method="get")
+                    button(class="button" id="logoutBtn" type="submit") Logout
